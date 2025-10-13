@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "bluebell",
+	"version": "${version}",
+	"name": "Bluebell",
+	"description": "The Bluebell mod adds new tools, the Hammers, which make mining easier by digging out an area of 3 by 3 blocks, one block deep.",
+	"authors": [
+		"Quentin Fouilleul"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/frquentin/bluebell-fabric"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/bluebell/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"fr.quentin.bluebell.Bluebell"
+		],
+        "client": [
+          "fr.quentin.bluebell.BluebellClient"
+        ],
+		"fabric-datagen": [
+			"fr.quentin.bluebell.BluebellDataGenerator"
+		]
+	},
+	"mixins": [
+		"bluebell.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

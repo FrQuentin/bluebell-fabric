@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "fr.quentin.bluebell.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"BluebellMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
