@@ -1,1 +1,9 @@
-{}
+{
+  "item.bluebell.copper_hammer": "Copper Hammer",
+  "item.bluebell.diamond_hammer": "Diamond Hammer",
+  "item.bluebell.golden_hammer": "Golden Hammer",
+  "item.bluebell.iron_hammer": "Iron Hammer",
+  "item.bluebell.netherite_hammer": "Netherite Hammer",
+  "item.bluebell.stone_hammer": "Stone Hammer",
+  "item.bluebell.wooden_hammer": "Wooden Hammer"
+}
