@@ -1,5 +1,6 @@
 package fr.quentin.bluebell.datagen.language;
 
+import fr.quentin.bluebell.item.ModItemGroups;
 import fr.quentin.bluebell.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -21,5 +22,7 @@ public class ModEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.GOLDEN_HAMMER, "Golden Hammer");
         translationBuilder.add(ModItems.DIAMOND_HAMMER, "Diamond Hammer");
         translationBuilder.add(ModItems.NETHERITE_HAMMER, "Netherite Hammer");
+
+        translationBuilder.add(ModItemGroups.TOOLS.getDisplayName().getString(), "Bluebell Tools");
     }
 }

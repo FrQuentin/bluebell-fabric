@@ -1,5 +1,6 @@
 package fr.quentin.bluebell;
 
+import fr.quentin.bluebell.item.ModItemGroups;
 import fr.quentin.bluebell.item.ModItems;
 import fr.quentin.bluebell.util.HammerUsageEvent;
 import net.fabricmc.api.ModInitializer;
@@ -16,6 +17,7 @@ public class Bluebell implements ModInitializer {
 	@Override
 	public void onInitialize() {
         ModItems.initialize();
+        ModItemGroups.register();
 
         PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
 	}
