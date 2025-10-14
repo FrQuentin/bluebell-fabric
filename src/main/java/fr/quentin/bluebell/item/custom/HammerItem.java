@@ -9,40 +9,62 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class HammerItem extends Item {
+    private static final Map<Direction, List<BlockPos>> PATTERN_CACHE = new HashMap<>();
+
+    static {
+        int range = 1;
+
+        List<BlockPos> upDownPattern = new ArrayList<>();
+        for(int x = -range; x <= range; x++) {
+            for(int z = -range; z <= range; z++) {
+                upDownPattern.add(new BlockPos(x, 0, z));
+            }
+        }
+        PATTERN_CACHE.put(Direction.UP, Collections.unmodifiableList(upDownPattern));
+        PATTERN_CACHE.put(Direction.DOWN, Collections.unmodifiableList(upDownPattern));
+
+        List<BlockPos> northSouthPattern = new ArrayList<>();
+        for(int x = -range; x <= range; x++) {
+            for(int y = -range; y <= range; y++) {
+                northSouthPattern.add(new BlockPos(x, y, 0));
+            }
+        }
+        PATTERN_CACHE.put(Direction.NORTH, Collections.unmodifiableList(northSouthPattern));
+        PATTERN_CACHE.put(Direction.SOUTH, Collections.unmodifiableList(northSouthPattern));
+
+        List<BlockPos> eastWestPattern = new ArrayList<>();
+        for(int z = -range; z <= range; z++) {
+            for(int y = -range; y <= range; y++) {
+                eastWestPattern.add(new BlockPos(0, y, z));
+            }
+        }
+        PATTERN_CACHE.put(Direction.EAST, Collections.unmodifiableList(eastWestPattern));
+        PATTERN_CACHE.put(Direction.WEST, Collections.unmodifiableList(eastWestPattern));
+    }
+
     public HammerItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(settings.pickaxe(material, attackDamage, attackSpeed));
     }
 
-    public static List<BlockPos> getBlocksToBeDestroyed(int range, BlockPos initalBlockPos, ServerPlayerEntity player) {
+    public static List<BlockPos> getBlocksToBeDestroyed(BlockPos initialBlockPos, ServerPlayerEntity player) {
         List<BlockPos> positions = new ArrayList<>();
         HitResult hit = player.raycast(20, 0, false);
+
         if (hit.getType() == HitResult.Type.BLOCK) {
             BlockHitResult blockHit = (BlockHitResult) hit;
+            Direction side = blockHit.getSide();
 
-            if(blockHit.getSide() == Direction.DOWN || blockHit.getSide() == Direction.UP) {
-                for(int x = -range; x <= range; x++) {
-                    for(int y = -range; y <= range; y++) {
-                        positions.add(new BlockPos(initalBlockPos.getX() + x, initalBlockPos.getY(), initalBlockPos.getZ() + y));
-                    }
-                }
-            }
+            List<BlockPos> pattern = PATTERN_CACHE.get(side);
 
-            if(blockHit.getSide() == Direction.NORTH || blockHit.getSide() == Direction.SOUTH) {
-                for(int x = -range; x <= range; x++) {
-                    for(int y = -range; y <= range; y++) {
-                        positions.add(new BlockPos(initalBlockPos.getX() + x, initalBlockPos.getY() + y, initalBlockPos.getZ()));
-                    }
-                }
-            }
-
-            if(blockHit.getSide() == Direction.EAST || blockHit.getSide() == Direction.WEST) {
-                for(int x = -range; x <= range; x++) {
-                    for(int y = -range; y <= range; y++) {
-                        positions.add(new BlockPos(initalBlockPos.getX(), initalBlockPos.getY() + y, initalBlockPos.getZ() + x));
-                    }
+            if(pattern != null) {
+                for(BlockPos relativePos : pattern) {
+                    positions.add(initialBlockPos.add(relativePos));
                 }
             }
         }

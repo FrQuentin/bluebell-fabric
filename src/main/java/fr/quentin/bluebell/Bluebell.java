@@ -20,5 +20,6 @@ public class Bluebell implements ModInitializer {
         ModItemGroups.register();
 
         PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
+        HammerUsageEvent.registerCleanupEvent();
 	}
 }
