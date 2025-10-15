@@ -39,6 +39,7 @@ public class ModItemGroups {
             itemGroup.add(ModItems.EMERALD_CHESTPLATE);
             itemGroup.add(ModItems.EMERALD_LEGGINGS);
             itemGroup.add(ModItems.EMERALD_BOOTS);
+            itemGroup.add(ModItems.EMERALD_HORSE_ARMOR);
         });
     }
 }

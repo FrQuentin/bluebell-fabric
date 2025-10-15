@@ -64,6 +64,7 @@ public class ModItems {
     public static final Item EMERALD_CHESTPLATE = register("emerald_chestplate", new Item.Settings().armor(ModArmorMaterials.EMERALD, EquipmentType.CHESTPLATE));
     public static final Item EMERALD_LEGGINGS = register("emerald_leggings", new Item.Settings().armor(ModArmorMaterials.EMERALD, EquipmentType.LEGGINGS));
     public static final Item EMERALD_BOOTS = register("emerald_boots", new Item.Settings().armor(ModArmorMaterials.EMERALD, EquipmentType.BOOTS));
+    public static final Item EMERALD_HORSE_ARMOR = register("emerald_horse_armor", new Item.Settings().horseArmor(ModArmorMaterials.EMERALD));
 
     private static RegistryKey<Item> keyOf(String id) {
         return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Bluebell.MOD_ID, id));
