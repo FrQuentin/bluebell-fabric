@@ -12,16 +12,16 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
-    public static final RegistryKey<ItemGroup> TOOLS_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(Bluebell.MOD_ID, "bluebell_tools"));
-    public static final ItemGroup TOOLS = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(ModItems.DIAMOND_HAMMER))
-            .displayName(Text.translatable("itemGroup.bluebell_tools"))
+    public static final RegistryKey<ItemGroup> ITEMS_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(Bluebell.MOD_ID, "bluebell_items"));
+    public static final ItemGroup ITEMS = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModItems.EMERALD_HAMMER))
+            .displayName(Text.translatable("itemGroup.bluebell_items"))
             .build();
 
     public static void register() {
-        Registry.register(Registries.ITEM_GROUP, TOOLS_KEY, TOOLS);
+        Registry.register(Registries.ITEM_GROUP, ITEMS_KEY, ITEMS);
 
-        ItemGroupEvents.modifyEntriesEvent(TOOLS_KEY).register(itemGroup -> {
+        ItemGroupEvents.modifyEntriesEvent(ITEMS_KEY).register(itemGroup -> {
             itemGroup.add(ModItems.WOODEN_HAMMER);
             itemGroup.add(ModItems.STONE_HAMMER);
             itemGroup.add(ModItems.COPPER_HAMMER);
