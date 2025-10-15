@@ -2,7 +2,10 @@ package fr.quentin.bluebell.item;
 
 import fr.quentin.bluebell.Bluebell;
 import fr.quentin.bluebell.item.custom.HammerItem;
+import fr.quentin.bluebell.item.equipment.ModArmorMaterials;
 import net.minecraft.item.*;
+import net.minecraft.item.equipment.ArmorMaterials;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -57,6 +60,10 @@ public class ModItems {
     public static final Item EMERALD_PICKAXE = register("emerald_pickaxe", new Item.Settings().pickaxe(ModToolMaterial.EMERALD, 1.0F, -2.8F));
     public static final Item EMERALD_AXE = register("emerald_axe", settings -> new AxeItem(ModToolMaterial.EMERALD, 5.0F, -3.0F, settings));
     public static final Item EMERALD_HOE = register("emerald_hoe", settings -> new HoeItem(ModToolMaterial.EMERALD, -3.0F, 0.0F, settings));
+    public static final Item EMERALD_HELMET = register("emerald_helmet", new Item.Settings().armor(ModArmorMaterials.EMERALD, EquipmentType.HELMET));
+    public static final Item EMERALD_CHESTPLATE = register("emerald_chestplate", new Item.Settings().armor(ModArmorMaterials.EMERALD, EquipmentType.CHESTPLATE));
+    public static final Item EMERALD_LEGGINGS = register("emerald_leggings", new Item.Settings().armor(ModArmorMaterials.EMERALD, EquipmentType.LEGGINGS));
+    public static final Item EMERALD_BOOTS = register("emerald_boots", new Item.Settings().armor(ModArmorMaterials.EMERALD, EquipmentType.BOOTS));
 
     private static RegistryKey<Item> keyOf(String id) {
         return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Bluebell.MOD_ID, id));

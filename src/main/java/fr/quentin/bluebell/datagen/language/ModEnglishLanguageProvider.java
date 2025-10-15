@@ -28,6 +28,10 @@ public class ModEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.EMERALD_PICKAXE, "Emerald Pickaxe");
         translationBuilder.add(ModItems.EMERALD_AXE, "Emerald Axe");
         translationBuilder.add(ModItems.EMERALD_HOE, "Emerald Hoe");
+        translationBuilder.add(ModItems.EMERALD_HELMET, "Emerald Helmet");
+        translationBuilder.add(ModItems.EMERALD_CHESTPLATE, "Emerald Chestplate");
+        translationBuilder.add(ModItems.EMERALD_LEGGINGS, "Emerald Leggings");
+        translationBuilder.add(ModItems.EMERALD_BOOTS, "Emerald Boots");
 
         translationBuilder.add(ModItemGroups.TOOLS.getDisplayName().getString(), "Bluebell Tools");
     }

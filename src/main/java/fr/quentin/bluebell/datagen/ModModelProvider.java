@@ -1,6 +1,7 @@
 package fr.quentin.bluebell.datagen;
 
 import fr.quentin.bluebell.item.ModItems;
+import fr.quentin.bluebell.item.equipment.ModEquipmentAssetKeys;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.BlockStateModelGenerator;
@@ -32,5 +33,9 @@ public class ModModelProvider extends FabricModelProvider {
             itemModelGenerator.register(ModItems.EMERALD_PICKAXE, Models.HANDHELD);
             itemModelGenerator.register(ModItems.EMERALD_AXE, Models.HANDHELD);
             itemModelGenerator.register(ModItems.EMERALD_HOE, Models.HANDHELD);
+            itemModelGenerator.registerArmor(ModItems.EMERALD_HELMET, ModEquipmentAssetKeys.EMERALD, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+            itemModelGenerator.registerArmor(ModItems.EMERALD_CHESTPLATE, ModEquipmentAssetKeys.EMERALD, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+            itemModelGenerator.registerArmor(ModItems.EMERALD_LEGGINGS, ModEquipmentAssetKeys.EMERALD, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+            itemModelGenerator.registerArmor(ModItems.EMERALD_BOOTS, ModEquipmentAssetKeys.EMERALD, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
     }
 }

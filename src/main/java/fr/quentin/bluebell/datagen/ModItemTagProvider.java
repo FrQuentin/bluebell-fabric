@@ -39,5 +39,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.PICKAXES).add(ModItems.EMERALD_PICKAXE);
         valueLookupBuilder(ItemTags.AXES).add(ModItems.EMERALD_AXE);
         valueLookupBuilder(ItemTags.HOES).add(ModItems.EMERALD_HOE);
+        valueLookupBuilder(ModItemTags.REPAIRS_EMERALD_ARMOR).add(Items.EMERALD);
+        valueLookupBuilder(ItemTags.HEAD_ARMOR).add(ModItems.EMERALD_HELMET);
+        valueLookupBuilder(ItemTags.CHEST_ARMOR).add(ModItems.EMERALD_CHESTPLATE);
+        valueLookupBuilder(ItemTags.LEG_ARMOR).add(ModItems.EMERALD_LEGGINGS);
+        valueLookupBuilder(ItemTags.FOOT_ARMOR).add(ModItems.EMERALD_BOOTS);
     }
 }

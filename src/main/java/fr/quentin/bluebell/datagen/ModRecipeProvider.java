@@ -89,6 +89,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" #")
                         .criterion("has_emerald", conditionsFromTag(ModItemTags.EMERALD_TOOL_MATERIALS))
                         .offerTo(exporter);
+                createShaped(RecipeCategory.COMBAT, ModItems.EMERALD_HELMET)
+                        .input('X', Items.EMERALD)
+                        .pattern("XXX")
+                        .pattern("X X")
+                        .criterion("has_emerald", conditionsFromItem(Items.EMERALD))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.COMBAT, ModItems.EMERALD_CHESTPLATE)
+                        .input('X', Items.EMERALD)
+                        .pattern("X X")
+                        .pattern("XXX")
+                        .pattern("XXX")
+                        .criterion("has_emerald", conditionsFromItem(Items.EMERALD))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.COMBAT, ModItems.EMERALD_LEGGINGS)
+                        .input('X', Items.EMERALD)
+                        .pattern("XXX")
+                        .pattern("X X")
+                        .pattern("X X")
+                        .criterion("has_emerald", conditionsFromItem(Items.EMERALD))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.COMBAT, ModItems.EMERALD_BOOTS)
+                        .input('X', Items.EMERALD)
+                        .pattern("X X")
+                        .pattern("X X")
+                        .criterion("has_emerald", conditionsFromItem(Items.EMERALD))
+                        .offerTo(exporter);
             }
             public ShapedRecipeJsonBuilder createHammerItemRecipe(RecipeCategory category, ItemConvertible output, Ingredient input) {
                 return createShaped(category, output)
