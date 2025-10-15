@@ -2,6 +2,7 @@ package fr.quentin.bluebell.datagen;
 
 import fr.quentin.bluebell.Bluebell;
 import fr.quentin.bluebell.item.ModItems;
+import fr.quentin.bluebell.tag.ModItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.recipe.RecipeExporter;
@@ -44,7 +45,50 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 createHammerItemRecipe(RecipeCategory.TOOLS, ModItems.DIAMOND_HAMMER, Ingredient.ofItem(Items.DIAMOND))
                         .criterion("has_diamond", conditionsFromItem(Items.DIAMOND))
                         .offerTo(exporter);
+                createHammerItemRecipe(RecipeCategory.TOOLS, ModItems.EMERALD_HAMMER, Ingredient.ofItem(Items.EMERALD))
+                        .criterion("has_emerald", conditionsFromItem(Items.EMERALD))
+                        .offerTo(exporter);
                 offerNetheriteUpgradeRecipe(ModItems.DIAMOND_HAMMER, RecipeCategory.TOOLS, ModItems.NETHERITE_HAMMER);
+                createShaped(RecipeCategory.COMBAT, ModItems.EMERALD_SWORD)
+                        .input('#', Items.STICK)
+                        .input('X', ModItemTags.EMERALD_TOOL_MATERIALS)
+                        .pattern("X")
+                        .pattern("X")
+                        .pattern("#")
+                        .criterion("has_emerald", conditionsFromTag(ModItemTags.EMERALD_TOOL_MATERIALS))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.TOOLS, ModItems.EMERALD_SHOVEL)
+                        .input('#', Items.STICK)
+                        .input('X', ModItemTags.EMERALD_TOOL_MATERIALS)
+                        .pattern("X")
+                        .pattern("#")
+                        .pattern("#")
+                        .criterion("has_emerald", conditionsFromTag(ModItemTags.EMERALD_TOOL_MATERIALS))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.TOOLS, ModItems.EMERALD_PICKAXE)
+                        .input('#', Items.STICK)
+                        .input('X', ModItemTags.EMERALD_TOOL_MATERIALS)
+                        .pattern("XXX")
+                        .pattern(" # ")
+                        .pattern(" # ")
+                        .criterion("has_emerald", conditionsFromTag(ModItemTags.EMERALD_TOOL_MATERIALS))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.TOOLS, ModItems.EMERALD_AXE)
+                        .input('#', Items.STICK)
+                        .input('X', ModItemTags.EMERALD_TOOL_MATERIALS)
+                        .pattern("XX")
+                        .pattern("X#")
+                        .pattern(" #")
+                        .criterion("has_emerald", conditionsFromTag(ModItemTags.EMERALD_TOOL_MATERIALS))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.TOOLS, ModItems.EMERALD_HOE)
+                        .input('#', Items.STICK)
+                        .input('X', ModItemTags.EMERALD_TOOL_MATERIALS)
+                        .pattern("XX")
+                        .pattern(" #")
+                        .pattern(" #")
+                        .criterion("has_emerald", conditionsFromTag(ModItemTags.EMERALD_TOOL_MATERIALS))
+                        .offerTo(exporter);
             }
             public ShapedRecipeJsonBuilder createHammerItemRecipe(RecipeCategory category, ItemConvertible output, Ingredient input) {
                 return createShaped(category, output)

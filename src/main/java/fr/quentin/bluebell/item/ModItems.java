@@ -2,9 +2,7 @@ package fr.quentin.bluebell.item;
 
 import fr.quentin.bluebell.Bluebell;
 import fr.quentin.bluebell.item.custom.HammerItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -44,14 +42,32 @@ public class ModItems {
             settings -> new HammerItem(ToolMaterial.DIAMOND, 1.0F, -3.2F, settings),
             new Item.Settings()
     );
+    public static final Item EMERALD_HAMMER = register(
+            "emerald_hammer",
+            settings -> new HammerItem(ModToolMaterial.EMERALD, 1.0F, -3.2F, settings),
+            new Item.Settings()
+    );
     public static final Item NETHERITE_HAMMER = register(
             "netherite_hammer",
             settings -> new HammerItem(ToolMaterial.NETHERITE, 1.0F, -3.2F, settings),
             new Item.Settings()
     );
+    public static final Item EMERALD_SWORD = register("emerald_sword", new Item.Settings().sword(ModToolMaterial.EMERALD, 3.0F, -2.4F));
+    public static final Item EMERALD_SHOVEL = register("emerald_shovel", settings -> new ShovelItem(ModToolMaterial.EMERALD, 1.5F, -3.0F, settings));
+    public static final Item EMERALD_PICKAXE = register("emerald_pickaxe", new Item.Settings().pickaxe(ModToolMaterial.EMERALD, 1.0F, -2.8F));
+    public static final Item EMERALD_AXE = register("emerald_axe", settings -> new AxeItem(ModToolMaterial.EMERALD, 5.0F, -3.0F, settings));
+    public static final Item EMERALD_HOE = register("emerald_hoe", settings -> new HoeItem(ModToolMaterial.EMERALD, -3.0F, 0.0F, settings));
 
     private static RegistryKey<Item> keyOf(String id) {
         return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Bluebell.MOD_ID, id));
+    }
+
+    public static Item register(String id, Function<Item.Settings, Item> factory) {
+        return register(keyOf(id), factory, new Item.Settings());
+    }
+
+    public static Item register(String id, Item.Settings settings) {
+        return register(keyOf(id), Item::new, settings);
     }
 
     public static Item register(String id, Function<Item.Settings, Item> factory, Item.Settings settings) {
@@ -60,6 +76,15 @@ public class ModItems {
         if (item instanceof BlockItem blockItem) {
             blockItem.appendBlocks(Item.BLOCK_ITEMS, item);
         }
+        return Registry.register(Registries.ITEM, key, item);
+    }
+
+    public static Item register(RegistryKey<Item> key, Function<Item.Settings, Item> factory, Item.Settings settings) {
+        Item item = factory.apply(settings.registryKey(key));
+        if (item instanceof BlockItem blockItem) {
+            blockItem.appendBlocks(Item.BLOCK_ITEMS, item);
+        }
+
         return Registry.register(Registries.ITEM, key, item);
     }
 

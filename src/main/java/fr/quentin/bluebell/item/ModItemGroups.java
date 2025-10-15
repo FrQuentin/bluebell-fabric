@@ -28,7 +28,13 @@ public class ModItemGroups {
             itemGroup.add(ModItems.IRON_HAMMER);
             itemGroup.add(ModItems.GOLDEN_HAMMER);
             itemGroup.add(ModItems.DIAMOND_HAMMER);
+            itemGroup.add(ModItems.EMERALD_HAMMER);
             itemGroup.add(ModItems.NETHERITE_HAMMER);
+            itemGroup.add(ModItems.EMERALD_SWORD);
+            itemGroup.add(ModItems.EMERALD_SHOVEL);
+            itemGroup.add(ModItems.EMERALD_PICKAXE);
+            itemGroup.add(ModItems.EMERALD_AXE);
+            itemGroup.add(ModItems.EMERALD_HOE);
         });
     }
 }

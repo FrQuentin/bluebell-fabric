@@ -25,6 +25,12 @@ public class ModModelProvider extends FabricModelProvider {
             itemModelGenerator.register(ModItems.IRON_HAMMER, Models.HANDHELD_MACE);
             itemModelGenerator.register(ModItems.GOLDEN_HAMMER, Models.HANDHELD_MACE);
             itemModelGenerator.register(ModItems.DIAMOND_HAMMER, Models.HANDHELD_MACE);
+            itemModelGenerator.register(ModItems.EMERALD_HAMMER, Models.HANDHELD_MACE);
             itemModelGenerator.register(ModItems.NETHERITE_HAMMER, Models.HANDHELD_MACE);
+            itemModelGenerator.register(ModItems.EMERALD_SWORD, Models.HANDHELD);
+            itemModelGenerator.register(ModItems.EMERALD_SHOVEL, Models.HANDHELD);
+            itemModelGenerator.register(ModItems.EMERALD_PICKAXE, Models.HANDHELD);
+            itemModelGenerator.register(ModItems.EMERALD_AXE, Models.HANDHELD);
+            itemModelGenerator.register(ModItems.EMERALD_HOE, Models.HANDHELD);
     }
 }

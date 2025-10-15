@@ -21,7 +21,13 @@ public class ModEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.IRON_HAMMER, "Iron Hammer");
         translationBuilder.add(ModItems.GOLDEN_HAMMER, "Golden Hammer");
         translationBuilder.add(ModItems.DIAMOND_HAMMER, "Diamond Hammer");
+        translationBuilder.add(ModItems.EMERALD_HAMMER, "Emerald Hammer");
         translationBuilder.add(ModItems.NETHERITE_HAMMER, "Netherite Hammer");
+        translationBuilder.add(ModItems.EMERALD_SWORD, "Emerald Sword");
+        translationBuilder.add(ModItems.EMERALD_SHOVEL, "Emerald Shovel");
+        translationBuilder.add(ModItems.EMERALD_PICKAXE, "Emerald Pickaxe");
+        translationBuilder.add(ModItems.EMERALD_AXE, "Emerald Axe");
+        translationBuilder.add(ModItems.EMERALD_HOE, "Emerald Hoe");
 
         translationBuilder.add(ModItemGroups.TOOLS.getDisplayName().getString(), "Bluebell Tools");
     }
