@@ -4,7 +4,6 @@ import fr.quentin.bluebell.Bluebell;
 import fr.quentin.bluebell.item.custom.HammerItem;
 import fr.quentin.bluebell.item.equipment.ModArmorMaterials;
 import net.minecraft.item.*;
-import net.minecraft.item.equipment.ArmorMaterials;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -65,6 +64,7 @@ public class ModItems {
     public static final Item EMERALD_LEGGINGS = register("emerald_leggings", new Item.Settings().armor(ModArmorMaterials.EMERALD, EquipmentType.LEGGINGS));
     public static final Item EMERALD_BOOTS = register("emerald_boots", new Item.Settings().armor(ModArmorMaterials.EMERALD, EquipmentType.BOOTS));
     public static final Item EMERALD_HORSE_ARMOR = register("emerald_horse_armor", new Item.Settings().horseArmor(ModArmorMaterials.EMERALD));
+    public static final Item EMERALD_BOW = register("emerald_bow", BowItem::new, new Item.Settings().maxDamage(768).enchantable(1));
 
     private static RegistryKey<Item> keyOf(String id) {
         return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Bluebell.MOD_ID, id));

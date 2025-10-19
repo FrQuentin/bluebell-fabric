@@ -38,5 +38,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.EMERALD_LEGGINGS, ModEquipmentAssetKeys.EMERALD, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.EMERALD_BOOTS, ModEquipmentAssetKeys.EMERALD, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
         itemModelGenerator.register(ModItems.EMERALD_HORSE_ARMOR, Models.GENERATED);
+        itemModelGenerator.upload(ModItems.EMERALD_BOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.EMERALD_BOW);
     }
 }

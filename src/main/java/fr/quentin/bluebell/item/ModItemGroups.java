@@ -35,6 +35,7 @@ public class ModItemGroups {
             itemGroup.add(ModItems.EMERALD_PICKAXE);
             itemGroup.add(ModItems.EMERALD_AXE);
             itemGroup.add(ModItems.EMERALD_HOE);
+            itemGroup.add(ModItems.EMERALD_BOW);
             itemGroup.add(ModItems.EMERALD_HELMET);
             itemGroup.add(ModItems.EMERALD_CHESTPLATE);
             itemGroup.add(ModItems.EMERALD_LEGGINGS);

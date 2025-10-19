@@ -3,7 +3,8 @@
 	"package": "fr.quentin.bluebell.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"BluebellMixin"
+		"BluebellMixin",
+		"AbstractClientPlayerEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

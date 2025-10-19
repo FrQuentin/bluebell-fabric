@@ -31,7 +31,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.BREAKS_DECORATED_POTS).addTag(ModItemTags.HAMMERS);
         valueLookupBuilder(ItemTags.MINING_ENCHANTABLE).addTag(ModItemTags.HAMMERS);
         valueLookupBuilder(ItemTags.MINING_LOOT_ENCHANTABLE).addTag(ModItemTags.HAMMERS);
-        valueLookupBuilder(ItemTags.DURABILITY_ENCHANTABLE).addTag(ModItemTags.HAMMERS);
+        valueLookupBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(ModItems.EMERALD_BOW).addTag(ModItemTags.HAMMERS);
         valueLookupBuilder(ModItemTags.EMERALD_TOOL_MATERIALS).add(Items.EMERALD);
         valueLookupBuilder(ItemTags.CLUSTER_MAX_HARVESTABLES).add(ModItems.EMERALD_PICKAXE);
         valueLookupBuilder(ItemTags.SWORDS).add(ModItems.EMERALD_SWORD);
@@ -44,5 +44,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.CHEST_ARMOR).add(ModItems.EMERALD_CHESTPLATE);
         valueLookupBuilder(ItemTags.LEG_ARMOR).add(ModItems.EMERALD_LEGGINGS);
         valueLookupBuilder(ItemTags.FOOT_ARMOR).add(ModItems.EMERALD_BOOTS);
+        valueLookupBuilder(ItemTags.BOW_ENCHANTABLE).add(ModItems.EMERALD_BOW);
     }
 }

@@ -115,6 +115,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("X X")
                         .criterion("has_emerald", conditionsFromItem(Items.EMERALD))
                         .offerTo(exporter);
+                createShaped(RecipeCategory.COMBAT, ModItems.EMERALD_BOW)
+                        .input('#', Items.EMERALD)
+                        .input('X', Items.STRING)
+                        .pattern(" #X")
+                        .pattern("# X")
+                        .pattern(" #X")
+                        .criterion("has_string", conditionsFromItem(Items.STRING))
+                        .offerTo(exporter);
             }
             public ShapedRecipeJsonBuilder createHammerItemRecipe(RecipeCategory category, ItemConvertible output, Ingredient input) {
                 return createShaped(category, output)
