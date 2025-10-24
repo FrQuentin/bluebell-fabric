@@ -36,5 +36,11 @@ public class ModEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.EMERALD_BOW, "Emerald Bow");
 
         translationBuilder.add(ModItemGroups.ITEMS.getDisplayName().getString(), "Bluebell Items");
+
+        translationBuilder.add("tag.item.bluebell.hammers", "Hammers");
+        translationBuilder.add("tag.item.bluebell.emerald_tool_materials", "Emerald Tool Materials");
+        translationBuilder.add("tag.item.bluebell.repairs_emerald_armor", "Repairs Emerald Armor");
+        translationBuilder.add("tag.block.bluebell.needs_emerald_tool", "Blocks Requiring Emerald Tool");
+        translationBuilder.add("tag.block.bluebell.incorrect_for_emerald_tool", "Incorrect for Emerald Tool");
     }
 }

@@ -3,12 +3,12 @@
 	"id": "bluebell",
 	"version": "${version}",
 	"name": "Bluebell",
-	"description": "The Bluebell mod adds new tools, the Hammers, which make mining easier by digging out an area of 3 by 3 blocks, one block deep.",
+	"description": "The Bluebell mod adds new tools, The Hammers, which make mining easier by digging out an area of 3 by 3 blocks, one block deep. It also introduces a complete Emerald equipment set, including tools, armor, and more!",
 	"authors": [
 		"Quentin Fouilleul"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
+		"homepage": "https://modrinth.com/mod/bluebell",
 		"sources": "https://github.com/frquentin/bluebell-fabric"
 	},
 	"license": "CC0-1.0",

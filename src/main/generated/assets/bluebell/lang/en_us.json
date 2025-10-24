@@ -18,5 +18,10 @@
   "item.bluebell.netherite_hammer": "Netherite Hammer",
   "item.bluebell.stone_hammer": "Stone Hammer",
   "item.bluebell.wooden_hammer": "Wooden Hammer",
-  "itemGroup.bluebell_items": "Bluebell Items"
+  "itemGroup.bluebell_items": "Bluebell Items",
+  "tag.block.bluebell.incorrect_for_emerald_tool": "Incorrect for Emerald Tool",
+  "tag.block.bluebell.needs_emerald_tool": "Blocks Requiring Emerald Tool",
+  "tag.item.bluebell.emerald_tool_materials": "Emerald Tool Materials",
+  "tag.item.bluebell.hammers": "Hammers",
+  "tag.item.bluebell.repairs_emerald_armor": "Repairs Emerald Armor"
 }
